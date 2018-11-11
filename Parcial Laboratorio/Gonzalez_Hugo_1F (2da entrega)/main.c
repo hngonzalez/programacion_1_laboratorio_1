@@ -190,6 +190,7 @@ int main()
                     listarClienteDeterminado (alquiler, CANT_CyJ, juegos, CANT_JUEGOS);
                     listarJuegosPorFechaDeterminada (alquiler, CANT_CyJ, juegos, CANT_JUEGOS);
                     listarClientePorFechaDeterminada (alquiler, CANT_CyJ, clientes, CANT_CLIENTES);
+
                     juegoMenosAlquilado (alquiler,CANT_CyJ, juegos, CANT_JUEGOS);
                 }
                 else

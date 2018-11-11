@@ -711,7 +711,7 @@ int ordenamientoClientes (tCliente* array, int cantidadElementos)
         {
             auxArray = array[i];
             j = i - 1;
-            while (strcmp(array[j].apellido,array[i].apellido)>0)
+            while ((j >= 0) && (stricmp(array[j].apellido,array[i].apellido))>0)
             {
                 array[j+1] = array[j];
                 j--;
@@ -731,9 +731,10 @@ int ordenamientoClientes (tCliente* array, int cantidadElementos)
 
 
 /**
- *
- * @param
- * @return
+ * Imprime los clientes con un ordenamiento específico
+ * @param array es el array de clientes
+ * @param cantidadElementos es la cantidad de elementos que tiene el array clientes
+ * @return (0) si se pudo realizar | (-1) en caso de que no
  */
 int listarClientes (tCliente* array, int cantidadElementos, int contadorCargas)
 {
@@ -775,7 +776,7 @@ int listarClientes (tCliente* array, int cantidadElementos, int contadorCargas)
  */
 int listarJuegos (tJuegos* array, int cantidadElementos, int contCargasJuegos)
 {
-    int i;
+    int i; * @param array es el array de clientes
     int retorno = -1;
 
     if (contCargasJuegos !=0)
@@ -1068,7 +1069,6 @@ int listarClientePorFechaDeterminada (tAlquileres* array, int cantidadElementos,
     printf("\n\n");
     return retorno;
 }
-
 
 
 
