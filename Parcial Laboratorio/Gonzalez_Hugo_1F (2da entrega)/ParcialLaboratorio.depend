@@ -1,0 +1,145 @@
+# depslib dependency file v1.0
+1538527782 source:d:\gonzalez nahuel\parcial laboratorio\parciallaboratorio\clienjuegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"prototipos.h"
+
+1538527526 d:\gonzalez nahuel\parcial laboratorio\parciallaboratorio\prototipos.h
+
+1538523439 source:d:\gonzalez nahuel\parcial laboratorio\parciallaboratorio\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"prototipos.h"
+
+1538527708 source:d:\gonzalez nahuel\parcial laboratorio\parciallaboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"prototipos.h"
+
+1538527782 source:d:\gonzalez nahuel\parcial laboratorio\gonzalez_hugo_1f\clienjuegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"prototipos.h"
+
+1538528423 d:\gonzalez nahuel\parcial laboratorio\gonzalez_hugo_1f\prototipos.h
+
+1538523439 source:d:\gonzalez nahuel\parcial laboratorio\gonzalez_hugo_1f\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"prototipos.h"
+
+1538528364 source:d:\gonzalez nahuel\parcial laboratorio\gonzalez_hugo_1f\main.c
+	<stdio.h>
+	<stdlib.h>
+	"prototipos.h"
+
+1538998669 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f\clienjuegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"prototipos.h"
+
+1538929086 d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f\prototipos.h
+
+1538930500 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"prototipos.h"
+
+1538998883 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f\main.c
+	<stdio.h>
+	<stdlib.h>
+	"prototipos.h"
+
+1539045041 source:d:\gonzalez hugo nahuel\gonzalez_hugo_1f\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ClienJuegos.h"
+	"input.h"
+
+1539043165 d:\gonzalez hugo nahuel\gonzalez_hugo_1f\prototipos.h
+
+1539045041 source:d:\gonzalez hugo nahuel\gonzalez_hugo_1f\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ClienJuegos.h"
+	"input.h"
+
+1539044113 source:d:\gonzalez hugo nahuel\gonzalez_hugo_1f\clienjuegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"prototipos.h"
+
+1539044964 d:\gonzalez hugo nahuel\gonzalez_hugo_1f\input.h
+
+1539045027 d:\gonzalez hugo nahuel\gonzalez_hugo_1f\clienjuegos.h
+
+1540681036 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f (para corregir)\clienjuegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<stdbool.h>
+	"ClienJuegos.h"
+	"input.h"
+
+1539045042 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f (para corregir)\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ClienJuegos.h"
+	"input.h"
+
+1540680990 d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f (para corregir)\clienjuegos.h
+
+1540681000 d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f (para corregir)\input.h
+
+1540680964 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\programación i\gonzalez_hugo_1f (para corregir)\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ClienJuegos.h"
+	"input.h"
+
+1541971066 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\laboratorio i\gonzalez_hugo_1f (para corregir)\clienjuegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<stdbool.h>
+	"ClienJuegos.h"
+	"input.h"
+
+1541971009 d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\laboratorio i\gonzalez_hugo_1f (para corregir)\clienjuegos.h
+
+1540681000 d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\laboratorio i\gonzalez_hugo_1f (para corregir)\input.h
+
+1539045042 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\laboratorio i\gonzalez_hugo_1f (para corregir)\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ClienJuegos.h"
+	"input.h"
+
+1541971009 source:d:\hdd 500gb\partición h (juegos)\users\nahuel\documents\mis documentos\utn\tecnicatura superior en programación\laboratorio i\gonzalez_hugo_1f (para corregir)\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ClienJuegos.h"
+	"input.h"
+
