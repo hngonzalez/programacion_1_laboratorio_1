@@ -35,6 +35,12 @@ typedef struct
     int isEmpty;
 } tAlquileres;
 
+typedef struct {
+    int idJue;
+    int idClie;
+    int cantidadDeAlquileres;
+    int isEmpty;
+} Alquileres;
 
 
 int initArray (tCliente* arrayCliente, tJuegos* arrayJuegos, tAlquileres* arrayAlquiler,
@@ -74,6 +80,7 @@ int listarClienteDeterminado (tAlquileres* array, int cantidadElementos,tJuegos*
 int listarJuegosPorFechaDeterminada (tAlquileres* array, int cantidadElementos,tJuegos* juegos, int cantElementJuegos);
 int listarClientePorFechaDeterminada (tAlquileres* array, int cantidadElementos, tCliente* clientes, int cantElementClientes);
 
-int juegoMenosAlquilado (tAlquileres* arrayAlquileres,int cantidadElementosAlquileres, tJuegos* arrayJuegos, int cantidadElementosJuegos);
+void cantidadVecesAlquiloJuego(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados);
+int juegosMenosAlquilados(Alquileres*,tAlquileres*,tJuegos*,int,int);
 
 #endif  // CLIENJUEGOS_H_INCLUDED

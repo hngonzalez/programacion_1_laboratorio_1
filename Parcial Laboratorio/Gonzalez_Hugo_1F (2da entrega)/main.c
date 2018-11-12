@@ -25,6 +25,9 @@ int main()
     tAlquileres alquiler[CANT_CyJ];
         int auxFecha;
         int auxIdAlquiler=0;
+
+    Alquileres alquilerJuegos[CANT_CyJ];
+
     int x,n,b;
     int optionMenu;
     int optionSubMenu;
@@ -190,8 +193,8 @@ int main()
                     listarClienteDeterminado (alquiler, CANT_CyJ, juegos, CANT_JUEGOS);
                     listarJuegosPorFechaDeterminada (alquiler, CANT_CyJ, juegos, CANT_JUEGOS);
                     listarClientePorFechaDeterminada (alquiler, CANT_CyJ, clientes, CANT_CLIENTES);
+                    juegosMenosAlquilados(alquilerJuegos,alquiler,juegos,CANT_JUEGOS,CANT_CyJ);
 
-                    juegoMenosAlquilado (alquiler,CANT_CyJ, juegos, CANT_JUEGOS);
                 }
                 else
                 {

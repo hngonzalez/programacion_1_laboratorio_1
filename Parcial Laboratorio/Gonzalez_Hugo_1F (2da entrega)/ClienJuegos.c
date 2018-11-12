@@ -776,7 +776,7 @@ int listarClientes (tCliente* array, int cantidadElementos, int contadorCargas)
  */
 int listarJuegos (tJuegos* array, int cantidadElementos, int contCargasJuegos)
 {
-    int i; * @param array es el array de clientes
+    int i;
     int retorno = -1;
 
     if (contCargasJuegos !=0)
@@ -1072,67 +1072,53 @@ int listarClientePorFechaDeterminada (tAlquileres* array, int cantidadElementos,
 
 
 
-
-
-/**
- *
- * @param array de alquileres
- * @param cantidadElementos del array de alquileres
- * @return 0 si se pudo realizar | -1 si no
- */
-int juegoMenosAlquilado (tAlquileres* arrayAlquileres,int cantidadElementosAlquileres, tJuegos* arrayJuegos, int cantidadElementosJuegos)
-{
-    int i;
-    int x;
-    int retorno=-1;
-    int identificadorID;
-    int contadorJuegosAlquilados=0;
-    int maximo, minimo;
-    int auxArrayMaximo, auxArrayMinimo;
-
-
-    for (i=0; i< cantidadElementosJuegos ; i++)
-    {
-        if (arrayJuegos[i].isEmpty==0)
-        {
-            for(x=0; x<cantidadElementosAlquileres; x++)
-            {
-                if (arrayAlquileres[x].isEmpty == 0)
-                {
-                    if (arrayJuegos[i].idJuego == arrayAlquileres[x].codAlquiler)
-                    {
-                        contadorJuegosAlquilados++;
-
-                        if (contadorJuegosAlquilados == 1)
-                        {
-                            maximo=contadorJuegosAlquilados;
-                            minimo=contadorJuegosAlquilados;
-                            auxArrayMaximo= arrayJuegos[i].idJuego;
-                            auxArrayMinimo= arrayJuegos[i].idJuego;
-                        }
-                        if (contadorJuegosAlquilados>maximo)
-                        {
-                            maximo=contadorJuegosAlquilados;
-                            auxArrayMaximo= arrayJuegos[i].idJuego;
-                        }
-                        if (contadorJuegosAlquilados<minimo)
-                        {
-                            minimo=contadorJuegosAlquilados;
-                            auxArrayMinimo= arrayJuegos[i].idJuego;
-                        }
-
-
-                    }
-                }
+void cantidadVecesAlquiloJuego(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados){
+    int i,h;
+    for(h=0;h<cantidadElementosAlquilados;h++){
+        alquilerJuegos[h].cantidadDeAlquileres=0;
+        alquilerJuegos[h].idJue=0;
+        alquilerJuegos[h].isEmpty=1;
+    }
+    for(i=0;i<cantidadElementosAlquilados;i++){
+        for(h=0;h<cantidadElementosAlquilados;h++){
+            if(alquiler[i].isEmpty==0&&(juego[i].idJuego==alquiler[h].codJuego)){
+                alquilerJuegos[i].isEmpty=0;
+                alquilerJuegos[i].idJue=alquiler[h].codJuego;
+                alquilerJuegos[i].cantidadDeAlquileres++;
             }
-        printf(" ID:%.2d alquilado %d veces\n",arrayJuegos[i].idJuego, contadorJuegosAlquilados);
         }
-        contadorJuegosAlquilados=0;
+    }
+}
+
+
+int juegosMenosAlquilados(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados){
+    int retorno=-1;
+    int i, j;
+    int min=cantidadElementosAlquilados;
+
+    cantidadVecesAlquiloJuego(alquilerJuegos,alquiler,juego,cantElementJuegos,cantidadElementosAlquilados);
+
+    for(j=0;j<cantidadElementosAlquilados;j++){
+        if((alquilerJuegos[j].cantidadDeAlquileres<min&&alquiler[j].isEmpty==0)){
+            min=alquilerJuegos[j].cantidadDeAlquileres;
+        }
     }
 
+    for(i=0;i<cantidadElementosAlquilados;i++){
+        for(j=0;j<cantidadElementosAlquilados;j++){
+            if(alquilerJuegos[i].isEmpty==0&&(alquilerJuegos[i].idJue==alquiler[j].codJuego)&&
+                (alquilerJuegos[i].cantidadDeAlquileres<=min)&&alquiler[j].isEmpty==0){
 
+
+                printf("\n\n  )El juego menos alquilado: - ID%03d | %s \n", juego[j].idJuego, juego[j].descripJuego,
+                                                                            juego[j].importeJuego);
+
+                retorno=i;
+
+            }
+        }
+    }
 
     return retorno;
 }
-
 
