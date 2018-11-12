@@ -1019,6 +1019,68 @@ int listarJuegosPorFechaDeterminada (tAlquileres* array, int cantidadElementos, 
 
 
 
+void cantidadVecesAlquiloJuego(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados){
+    int i,h;
+    for(h=0;h<cantidadElementosAlquilados;h++){
+        alquilerJuegos[h].cantDeAlquileres=0;
+        alquilerJuegos[h].idJuego=0;
+        alquilerJuegos[h].isEmpty=1;
+    }
+    for(i=0;i<cantidadElementosAlquilados;i++){
+        for(h=0;h<cantidadElementosAlquilados;h++){
+            if(alquiler[i].isEmpty==0&&(juego[i].idJuego==alquiler[h].codJuego)){
+                alquilerJuegos[i].isEmpty=0;
+                alquilerJuegos[i].idJuego=alquiler[h].codJuego;
+                alquilerJuegos[i].cantDeAlquileres++;
+            }
+        }
+    }
+}
+
+
+
+
+
+/** \brief Calcula los juegos menos alquilados
+ * \param alquiler* puntero al array de alquiler
+ * \param juego* puntero al array de juego
+ * \param cantElementJuegos cant total de juegos
+ * \param cantidadElementosAlquilados cant total de alquileres
+ * \return (-1) si hay error, la posicion del array si no hay error
+ */
+int juegosMenosAlquilados(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados){
+    int retorno=-1;
+    int i, j;
+    int valMinimo = cantidadElementosAlquilados;
+
+    cantidadVecesAlquiloJuego(alquilerJuegos,alquiler,juego,cantElementJuegos,cantidadElementosAlquilados);
+
+    for (j=0;j<cantidadElementosAlquilados;j++){
+        if ((alquilerJuegos[j].cantDeAlquileres < valMinimo&&alquiler[j].isEmpty == 0)){
+            valMinimo = alquilerJuegos[j].cantDeAlquileres;
+        }
+    }
+
+    for (i=0;i<cantidadElementosAlquilados;i++){
+        for (j=0;j<cantidadElementosAlquilados;j++){
+            if (alquilerJuegos[i].isEmpty == 0 &&(alquilerJuegos[i].idJuego==alquiler[j].codJuego) &&
+                (alquilerJuegos[i].cantDeAlquileres <= valMinimo) && alquiler[j].isEmpty==0){
+
+
+                printf("\n\n  g)El juego menos alquilado: - ID%03d | %s \n", juego[j].idJuego, juego[j].descripJuego,
+                                                                            juego[j].importeJuego);
+                retorno=i;
+            }
+        }
+    }
+
+    return retorno;
+}
+
+
+
+
+
 
 /**
  * Lista clientes que alquilaron en una fecha determinada
@@ -1072,51 +1134,9 @@ int listarClientePorFechaDeterminada (tAlquileres* array, int cantidadElementos,
 
 
 
-void cantidadVecesAlquiloJuego(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados){
-    int i,h;
-    for(h=0;h<cantidadElementosAlquilados;h++){
-        alquilerJuegos[h].cantDeAlquileres=0;
-        alquilerJuegos[h].idJuego=0;
-        alquilerJuegos[h].isEmpty=1;
-    }
-    for(i=0;i<cantidadElementosAlquilados;i++){
-        for(h=0;h<cantidadElementosAlquilados;h++){
-            if(alquiler[i].isEmpty==0&&(juego[i].idJuego==alquiler[h].codJuego)){
-                alquilerJuegos[i].isEmpty=0;
-                alquilerJuegos[i].idJuego=alquiler[h].codJuego;
-                alquilerJuegos[i].cantDeAlquileres++;
-            }
-        }
-    }
-}
 
 
-int juegosMenosAlquilados(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados){
-    int retorno=-1;
-    int i, j;
-    int valMinimo = cantidadElementosAlquilados;
-
-    cantidadVecesAlquiloJuego(alquilerJuegos,alquiler,juego,cantElementJuegos,cantidadElementosAlquilados);
-
-    for (j=0;j<cantidadElementosAlquilados;j++){
-        if ((alquilerJuegos[j].cantDeAlquileres < valMinimo&&alquiler[j].isEmpty == 0)){
-            valMinimo = alquilerJuegos[j].cantDeAlquileres;
-        }
-    }
-
-    for (i=0;i<cantidadElementosAlquilados;i++){
-        for (j=0;j<cantidadElementosAlquilados;j++){
-            if (alquilerJuegos[i].isEmpty == 0 &&(alquilerJuegos[i].idJuego==alquiler[j].codJuego) &&
-                (alquilerJuegos[i].cantDeAlquileres <= valMinimo) && alquiler[j].isEmpty==0){
 
 
-                printf("\n\n  )El juego menos alquilado: - ID%03d | %s \n", juego[j].idJuego, juego[j].descripJuego,
-                                                                            juego[j].importeJuego);
-                retorno=i;
-            }
-        }
-    }
 
-    return retorno;
-}
 
