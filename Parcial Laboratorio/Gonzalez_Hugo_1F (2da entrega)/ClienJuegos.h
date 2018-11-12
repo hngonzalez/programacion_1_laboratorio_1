@@ -36,9 +36,9 @@ typedef struct
 } tAlquileres;
 
 typedef struct {
-    int idJue;
-    int idClie;
-    int cantidadDeAlquileres;
+    int idJuego;
+    int idCliete;
+    int cantDeAlquileres;
     int isEmpty;
 } Alquileres;
 

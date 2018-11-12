@@ -1075,16 +1075,16 @@ int listarClientePorFechaDeterminada (tAlquileres* array, int cantidadElementos,
 void cantidadVecesAlquiloJuego(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados){
     int i,h;
     for(h=0;h<cantidadElementosAlquilados;h++){
-        alquilerJuegos[h].cantidadDeAlquileres=0;
-        alquilerJuegos[h].idJue=0;
+        alquilerJuegos[h].cantDeAlquileres=0;
+        alquilerJuegos[h].idJuego=0;
         alquilerJuegos[h].isEmpty=1;
     }
     for(i=0;i<cantidadElementosAlquilados;i++){
         for(h=0;h<cantidadElementosAlquilados;h++){
             if(alquiler[i].isEmpty==0&&(juego[i].idJuego==alquiler[h].codJuego)){
                 alquilerJuegos[i].isEmpty=0;
-                alquilerJuegos[i].idJue=alquiler[h].codJuego;
-                alquilerJuegos[i].cantidadDeAlquileres++;
+                alquilerJuegos[i].idJuego=alquiler[h].codJuego;
+                alquilerJuegos[i].cantDeAlquileres++;
             }
         }
     }
@@ -1094,27 +1094,25 @@ void cantidadVecesAlquiloJuego(Alquileres* alquilerJuegos,tAlquileres* alquiler,
 int juegosMenosAlquilados(Alquileres* alquilerJuegos,tAlquileres* alquiler,tJuegos* juego,int cantElementJuegos,int cantidadElementosAlquilados){
     int retorno=-1;
     int i, j;
-    int min=cantidadElementosAlquilados;
+    int valMinimo = cantidadElementosAlquilados;
 
     cantidadVecesAlquiloJuego(alquilerJuegos,alquiler,juego,cantElementJuegos,cantidadElementosAlquilados);
 
-    for(j=0;j<cantidadElementosAlquilados;j++){
-        if((alquilerJuegos[j].cantidadDeAlquileres<min&&alquiler[j].isEmpty==0)){
-            min=alquilerJuegos[j].cantidadDeAlquileres;
+    for (j=0;j<cantidadElementosAlquilados;j++){
+        if ((alquilerJuegos[j].cantDeAlquileres < valMinimo&&alquiler[j].isEmpty == 0)){
+            valMinimo = alquilerJuegos[j].cantDeAlquileres;
         }
     }
 
-    for(i=0;i<cantidadElementosAlquilados;i++){
-        for(j=0;j<cantidadElementosAlquilados;j++){
-            if(alquilerJuegos[i].isEmpty==0&&(alquilerJuegos[i].idJue==alquiler[j].codJuego)&&
-                (alquilerJuegos[i].cantidadDeAlquileres<=min)&&alquiler[j].isEmpty==0){
+    for (i=0;i<cantidadElementosAlquilados;i++){
+        for (j=0;j<cantidadElementosAlquilados;j++){
+            if (alquilerJuegos[i].isEmpty == 0 &&(alquilerJuegos[i].idJuego==alquiler[j].codJuego) &&
+                (alquilerJuegos[i].cantDeAlquileres <= valMinimo) && alquiler[j].isEmpty==0){
 
 
                 printf("\n\n  )El juego menos alquilado: - ID%03d | %s \n", juego[j].idJuego, juego[j].descripJuego,
                                                                             juego[j].importeJuego);
-
                 retorno=i;
-
             }
         }
     }
